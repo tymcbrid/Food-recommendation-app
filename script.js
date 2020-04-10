@@ -1,4 +1,7 @@
-// var cookBookCategory = $('#').val()
+$('#submit').on('click', function() {
+
+
+var cookBookCategory = $('#cookBookCategory').val()
 //CookBook
 var settings = {
 	"async": true,
@@ -11,35 +14,55 @@ var settings = {
 		"content-type": "text/plain",
 		"accept": "text/plain"
 	},
-	"data": "https://www.jamieoliver.com/recipes/pasta" /*+ cookBookCategory*/
+	"data": "https://www.jamieoliver.com/recipes/" + cookBookCategory,
 }
 $.ajax(settings).done(function (response) {
 	console.log(response);
+	let responseLength = response[0].ingredients.length;
+	let responseList = response[0].ingredients;
+	let responseTopics = response[0].instructions[0].steps
+	let responseImg = response[0].images[0]
+	console.log(responseLength)
+	for (var i = 0; i < responseLength; i++){
+		responseTopics[i]
+		console.log(responseTopics[i])
+		$('#topic').html(responseTopics[i])
+
+
+		responseList[i]
+		console.log(responseList[i])	
+		$('#list').html(responseList[i])
+
+
+		// responseImg
+		// console.log(responseImg)
+		// $('#').text(responseImg)
+	}
+	
+
 });
 //Cocktails
-// var cocktailCategory = $('#').val()
-// var ingredientCategory = $('#').val()
-// if (cocktailCategory == null){
+var cocktailCategory = $('#cocktailCategory').val()
+var ingredientCategory = $('#ingredientCategory').val()
+if (cocktailCategory == null){
     $.ajax({
-        url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka',  /*+ ingredientCategory,*/
+        url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i=' + ingredientCategory,
         method: "GET"
     }).then(function(ingredientresponse){
         console.log(ingredientresponse)})
-// })
-// } else if (ingredientCategory == null) {
+} else if (ingredientCategory == null) {
     $.ajax({
-        url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=bloodymary', /*+ cocktailCategory,*/
+        url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktailCategory,
         method: "GET"
     }).then(function(cocktailresponse){
         console.log(cocktailresponse)})
-// })
-// } else {
+} else {
     $.ajax({
         url: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
         method: "GET"
     }).then(function(randomresponse){
         console.log(randomresponse)})
-// })
+}
 //Resturants
 //
 var settings = {
@@ -55,3 +78,4 @@ var settings = {
 $.ajax(settings).done(function (resturantresponse) {
 	console.log(resturantresponse);
 });
+})
