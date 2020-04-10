@@ -1,0 +1,74 @@
+#header {
+    height: 0px;
+    background-color: black
+}
+#headertext{
+    font-size: 15px;
+    color: white;
+    font-style: italic;
+    position: relative;
+    right: 500px;
+    bottom: 10px;
+}
+
+#diningOut {
+    position: relative;
+    height: 173px;
+    margin-top: -16px;
+    background-image: url(restaurant1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#diningIn{
+    position: relative;
+    margin-top: -17px;
+    background-image: url(table1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#diningOuttext {
+    position: relative;
+    right: 500px;
+    font-weight: bolder;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+}
+
+#diningIntext {
+    position: relative;
+    left: 500px;
+    font-weight: bolder;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+}
+#cocktails {
+    position: relative;
+    margin-top: -16px;
+    background-image: url(cocktail3.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bars{
+    position: relative;
+    margin-top: -17px;
+    background-image: url(bar1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cocktailstext {
+    position: relative;
+    right: 500px;
+    font-weight: bolder;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+}
+
+#barstext {
+    position: relative;
+    left: 500px;
+    font-weight: bolder;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+}
